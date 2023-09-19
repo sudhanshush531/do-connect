@@ -1,0 +1,346 @@
+
+<section>
+  <!--<div>
+    <button type="button" class="btn btn-info" style="margin-right: 10px;color: white;"
+                    routerLink="/welcome">Logout</button></div>-->
+  <div id="background" style="height: 100vh;">
+
+  <table style="align-items: top; vertical-align:top; display:flex; align-content:top; justify-content:center">
+  <tr>
+    <td>
+  
+ 
+    <div class="l" style="width:950px">
+  <div class="container" id="cont-search" >
+    <form class="form-inline" [formGroup]='datasForm'>
+
+      <input matInput class="form-control mr-lg-2" formControlName="question" style="margin-right: 5px; color:black" type="search"
+        placeholder="Search the Question"  id="search-box" aria-label="Search" [matAutocomplete]="auto" (ngModelChange)="search()"
+        [(ngModel)]="question">
+
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let userQ of datas" [value]="userQ.question">
+          {{userQ.question}}
+        </mat-option>
+      </mat-autocomplete>
+
+      <button class="btn btn-secondary" type="submit" (click)="searchQ()"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </form>
+  </div>
+
+  <div class="container">
+
+    <h4>Ask your questions here</h4>
+
+    <form #dataForm="ngForm" (ngSubmit)="post(dataForm)">
+      <label>Choose your topic</label>
+      <select id="title" aria-placeholder="choose your topic" name="title" ngModel class="form-control">
+
+        <option value="Angular"> Angular</option>
+        <option value="Typescript"> TypeScript</option>
+        <option value="JavaScript"> JavaScript</option>
+        <option value="Java">Java</option>
+        <option value="DotNet">DotNet</option>
+      </select>
+      <textarea id="question" name="question" class="form-control" rows="3" placeholder="Enter your Question"
+        ngModel></textarea>
+      <button class="button-post" type="submit">POST</button>
+    </form>
+  </div>
+  <div class="container" *ngFor="let d of datalist">
+    <div style="margin-bottom:1.5em;">
+      <h3>{{d.title}}</h3><br>
+      <h5>{{d.question}}</h5>
+      Solution:
+      <h6>{{d.answer}}</h6>
+      <div class="bg-white">
+        <form id="ansForm" [formGroup]="ansForm">
+          <div class="d-flex flex-row fs-12">
+            <div class="like p-2 cursor"><i class="fa-solid fa-heart"></i><span class="ml-1">Like</span></div>
+            <div class="like p-2 cursor"><i class="fa fa-commenting-o"></i><span class="ml-1">Comment</span></div>
+          </div>
+          <div class="bg-light p-2">
+            <div class="d-flex flex-row align-items-start"><img class="rounded-circle"
+                style="margin-right: 10px; margin-top: 10px;"
+                src="../../../assets/images/user-images/154-1540525_male-user-filled-icon-my-profile-icon-png.png"
+                width="40">
+              <textarea formControlName="answer" name="answer" class="form-control"></textarea>
+            </div>
+            <div class="mt-2 text-right">
+              <button class="btn btn-primary btn-sm shadow-none" style="margin-right: 10px;" type="submit"
+                (click)="addAns(d)">Post comment</button>
+              <button class="btn btn-outline-primary btn-sm ml-1 shadow-none" type="button">Cancel</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  </div>
+
+ 
+
+</td>
+
+
+
+<td>
+
+  <div class="container" style="width: 320px; height:470px; color:grey; background-color:white; margin:30px " >
+  
+    <cdk-virtual-scroll-viewport #vScroll itemSize="allchats.length" style="height: 400px;">
+
+      <div *ngFor="let chat of allchats" class="ch">
+        <div class="container">
+          <b>{{chat.email}}</b>
+          <p>{{chat.message}}</p>
+        </div>
+        
+      </div>
+    </cdk-virtual-scroll-viewport>
+<!-- <h1>{{message}}</h1>
+<p>bjh</p> -->
+
+
+
+<form [formGroup]="chatform" (ngSubmit)="onSend()" style="margin-top:10px ;" >
+  
+<tr>
+  <td>
+  <div class="input-group form-group" style="width: 220px;" >
+    <input formControlName="m" id="m"  type="text" class="form-control" placeholder="type message">
+  </div>
+</td>
+  <td>
+  <div class="form-group" style="margin-left: 10px; " >
+    <input type="submit" value="send" class="btn float-right login_btn" style="color:white; background-color:green">
+  </div>
+</td>
+</tr>
+</form>
+
+    <!-- <form  (Submit)="onSend()" >
+
+      <table>
+        <tr>
+          <td>
+      <div class="input-group form-group" style="width: 120px;" >
+        <input id="m" required [(ngModel)]="c.message" type="text" class="form-control" placeholder="type message">
+      </div>
+    </td>
+    <td>
+      <div class="form-group" style="margin-left: 10px;  ">
+        <input type="submit" value="send" class="btn float-right login_btn" style="color:white; background-color:green">
+      </div>
+    </td>
+    </tr>
+</table>
+      </form> -->
+   </div>
+  </td>
+</tr>
+</table>
+</div>
+
+</section>
+
+
+
+<!-- Comment Box  -->
+<!-- <div class="d-flex justify-content-center row">
+    <div class="col-md">
+        <div class="d-flex flex-column comment-section">
+            <div class="bg-white p-2" *ngFor="let d of datalist">
+                <div class="d-flex flex-row user-info"><img class="rounded-circle" style="margin-right: 10px;" src="../../../assets/images/user-images/154-1540525_male-user-filled-icon-my-profile-icon-png.png" width="40">
+                    <div class="d-flex flex-column justify-content-start ml-2"><span class="d-block font-weight-bold name">{{d.title}}</span><span class="date text-black-50"> Apr 3 2022</span></div>
+                </div>
+                <div class="mt-3">
+                    <p class="comment-text">{{d.question}}
+                      <br>
+                      Description:
+                      {{d.answer}}</p>
+                </div>
+            </div>
+            <div class="bg-white">
+                <div class="d-flex flex-row fs-12">
+                    <div class="like p-2 cursor"><i class="fa-solid fa-heart"></i><span class="ml-1">Like</span></div>
+                    <div class="like p-2 cursor"><i class="fa fa-commenting-o"></i><span class="ml-1">Comment</span></div>
+                </div>
+            </div>
+            <div class="bg-light p-2">
+                <div class="d-flex flex-row align-items-start"><img class="rounded-circle" style="margin-right: 10px; margin-top: 10px;" src="../../../assets/images/user-images/154-1540525_male-user-filled-icon-my-profile-icon-png.png" width="40"><textarea class="form-control ml-1 shadow-none textarea"></textarea></div>
+                <div class="mt-2 text-right"><button class="btn btn-primary btn-sm shadow-none" style="margin-right: 10px;" type="button">Post comment</button><button class="btn btn-outline-primary btn-sm ml-1 shadow-none" type="button">Cancel</button></div>
+            </div>
+        </div>
+    </div>
+
+
+<div class="container">
+  <div class="d-flex justify-content-center row">
+    <div class="col-md">
+        <div class="d-flex flex-column comment-section">
+            <div class="bg-white p-2">
+                <div class="d-flex flex-row user-info"><img class="rounded-circle" style="margin-right: 10px;" src="../../../assets/images/user-images/user2.png" width="40">
+                    <div class="d-flex flex-column justify-content-start ml-2"><span class="d-block font-weight-bold name">Inum Peru Vekala </span><span class="date text-black-50">JavaScript - Apr 4 2022</span></div>
+                </div>
+                <div class="mt-3">
+                    <p class="comment-text">Why is JavaScript browser compatibility an issue in the first place?
+                      Early on, in the 1990s, the two main browsers globally used were Internet Explorer and Netscape implemented scripting in fundamentally different ways – Netscape used JavaScript, IE used JScript and also offered VBScript. JavaScript and JScript have some level of alignment since they both functioned on the ECMAScript specification. But on multiple levels, the code was implemented in contrasting and even conflicting ways, which made developing for both browsers exceptionally tedious.</p>
+                </div>
+            </div>
+            <div class="bg-white">
+                <div class="d-flex flex-row fs-12">
+                    <div class="like p-2 cursor"><i class="fa-solid fa-heart"></i><span class="ml-1">Like</span></div>
+                    <div class="like p-2 cursor"><i class="fa fa-commenting-o"></i><span class="ml-1">Comment</span></div>
+                </div>
+            </div>
+            <div class="bg-light p-2">
+                <div class="d-flex flex-row align-items-start"><img class="rounded-circle" style="margin-right: 10px; margin-top: 10px;" src="../../../assets/images/user-images/user2.png" width="40"><textarea class="form-control ml-1 shadow-none textarea"></textarea></div>
+                <div class="mt-2 text-right"><button class="btn btn-primary btn-sm shadow-none" style="margin-right: 10px;" type="button">Post comment</button><button class="btn btn-outline-primary btn-sm ml-1 shadow-none" type="button">Cancel</button></div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <mat-expansion-panel hideToggle>
+<mat-expansion-panel-header>
+    <mat-panel-title>
+      Political Science
+    </mat-panel-title>
+    
+  </mat-expansion-panel-header>
+   <mat-card >
+    <mat-card-header>
+         <div mat-card-avatar></div>
+
+           <mat-card-title>Question</mat-card-title>
+
+           <mat-card-actions>
+           <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Leave a question</mat-label>
+            <textarea matInput ></textarea>
+          </mat-form-field>
+        </mat-card-actions>
+         </mat-card-header>
+      
+        
+         <mat-card-content>
+            Answer
+         </mat-card-content>
+         <mat-card-actions>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Leave an answer</mat-label>
+                <textarea matInput ></textarea>
+              </mat-form-field>
+             <button mat-raised-button color="primary" (click) = "postquestion()">Post Question</button>
+             <button mat-raised-button color="primary" (click) = "postanswer()">Post Answer</button>
+         </mat-card-actions>
+ </mat-card>
+</mat-expansion-panel> -->
+
+
+<!-- <mat-expansion-panel hideToggle>
+ <mat-expansion-panel-header>
+    <mat-panel-title>
+      Geography
+    </mat-panel-title>
+    
+  </mat-expansion-panel-header>
+   <mat-card >
+    <mat-card-header>
+         <div mat-card-avatar></div>
+
+           <mat-card-title>Question</mat-card-title>
+
+           <mat-card-actions>
+           <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Leave a question</mat-label>
+            <textarea matInput ></textarea>
+          </mat-form-field>
+        </mat-card-actions>
+         </mat-card-header>
+      
+        
+         <mat-card-content>
+            Answer
+         </mat-card-content>
+         <mat-card-actions>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Leave an answer</mat-label>
+                <textarea matInput ></textarea>
+              </mat-form-field>
+             <button mat-raised-button color="primary" (click) = "postquestion()">Post Question</button>
+             <button mat-raised-button color="primary" (click) = "postanswer()">Post Answer</button>
+         </mat-card-actions>
+ </mat-card>
+</mat-expansion-panel>
+
+
+<mat-expansion-panel hideToggle>
+ <mat-expansion-panel-header>
+    <mat-panel-title>
+      Environmental Science
+    </mat-panel-title>
+    
+  </mat-expansion-panel-header>
+   <mat-card >
+    <mat-card-header>
+         <div mat-card-avatar></div>
+
+           <mat-card-title>Question</mat-card-title>
+
+           <mat-card-actions>
+           <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Leave a question</mat-label>
+            <textarea matInput ></textarea>
+          </mat-form-field>
+        </mat-card-actions>
+         </mat-card-header>
+      
+        
+         <mat-card-content>
+            Answer
+         </mat-card-content>
+         <mat-card-actions>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Leave an answer</mat-label>
+                <textarea matInput ></textarea>
+              </mat-form-field>
+             <button mat-raised-button color="primary" (click) = "postquestion()">Post Question</button>
+             <button mat-raised-button color="primary" (click) = "postanswer()">Post Answer</button>
+         </mat-card-actions>
+ </mat-card>
+ </mat-expansion-panel>
+
+
+
+
+ -->

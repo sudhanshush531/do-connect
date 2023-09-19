@@ -1,0 +1,38 @@
+<div>
+    
+    <mat-card class="card-images">
+
+        <mat-card-subtitle>
+            <table>
+                <tr>
+                    <th>UserId</th>
+                    <th>UserName</th>
+                    <th>UserPassword</th>
+                    <th>UserEmail</th>
+                    <th>UserPhone</th>
+                    <th colspan="4">Action</th>
+                </tr>
+                <tr *ngFor = "let users of user">
+                    <td>{{users.id}}</td>
+                    <td>{{users.userName}}</td>
+                    <td>{{users.password}}</td>
+                    <td>{{users.email}}</td>
+                    <td>{{users.phone}}</td>
+                  
+                    <td>
+                        <i class="fa-solid fa-trash" id="del" (click)="deleteuser(users.id)"></i>
+                    </td>
+                    <td>
+                    
+                   <i class="fa-solid fa-pen-to-square" id="edit" (click)="onEdit(users)"></i>
+                    </td>
+                    <td>
+                        <button mat-raised-button id="add" (click)=" onCreate()">Add User</button>
+                    </td>
+                </tr>
+            </table>
+
+        </mat-card-subtitle>
+    </mat-card>
+
+</div>

@@ -1,0 +1,174 @@
+section{
+    height: auto;
+}
+.container{
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin-top: 50px;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+h4{
+    text-transform: uppercase;
+}
+select{
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    padding: 10px;
+    color: #212529;
+    margin-top: 10px;
+}
+textarea{
+    margin-top:10px;
+    margin-bottom: 10px;
+}
+
+#background{
+    background-image:
+		url('data:image/jpeg;base64,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');
+        /* background-image: url('../../assets/images/istockphoto-1205485088-612x612.jpg');*/ 
+        background-size: cover;
+        
+    height: 300vh;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+}
+.button-post {
+  background:black;
+  border-radius: 999px;
+  box-shadow: grey 0 10px 20px -10px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-family: Inter,Helvetica,"Apple Color Emoji","Segoe UI Emoji",NotoColorEmoji,"Noto Color Emoji","Segoe UI Symbol","Android Emoji",EmojiSymbols,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  opacity: 1;
+  outline: 0 solid transparent;
+  padding: 8px 18px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: fit-content;
+  word-break: break-word;
+  border: 0;
+  display: flex;
+ 
+}
+ /* Comment CSS  */
+ .date {
+    font-size: 11px
+}
+
+.comment-text {
+    font-size: 12px
+}
+
+.fs-12 {
+    font-size: 12px
+}
+
+.shadow-none {
+    box-shadow: none
+}
+
+.name {
+    color: #007bff
+}
+
+.cursor {
+    cursor: pointer
+}
+
+.textarea {
+    resize: none
+}
+.btn{
+    border-radius: 40px;
+    font-family: Inter,Helvetica,"Apple Color Emoji","Segoe UI Emoji",NotoColorEmoji,"Noto Color Emoji","Segoe UI Symbol","Android Emoji",EmojiSymbols,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+}
+i{
+    margin:10px;
+}
+#del{
+    color: red;
+}
+#edit{
+    color:green;
+}
+#search-box{
+    width: 92%;
+    display: inline;
+}
+
+@media only screen and (max-width: 600px) {
+    .container{
+        width: 90%;
+    }
+    #search-box{
+        width: 80%;
+        display: inline;
+    }
+  }
+  .container {
+    border: 2px solid #dedede;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+  }
+  
+  /* Darker chat container */
+  .darker {
+    border-color: #ccc;
+    background-color: #ddd;
+  }
+  
+  /* Clear floats */
+  .container::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  /* Style images */
+  .container img {
+    float: left;
+    max-width: 60px;
+    width: 100%;
+    margin-right: 20px;
+    border-radius: 50%;
+  }
+  
+  /* Style the right image */
+  .container img.right {
+    float: right;
+    margin-left: 20px;
+    margin-right:0;
+  }
+  
+  /* Style time text */
+  .time-right {
+    float: right;
+    color: #aaa;
+  }
+  
+  /* Style time text */
+  .time-left {
+    float: left;
+    color: #999;
+  }
+  
+  .ch
+  {
+   
+    display:flex;
+
+  }
