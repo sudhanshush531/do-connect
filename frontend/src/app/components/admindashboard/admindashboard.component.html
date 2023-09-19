@@ -1,0 +1,41 @@
+<div id="background">
+<div class="bg-light">
+  <button class="btn btn-info" (click) = "gotouser()">User Dashboard</button>
+  <button class="btn btn-info" (click) = "gotocrud()">User Details</button>
+  
+</div>
+
+
+
+<div class="container" *ngFor="let d of datalist" >
+<div style="margin-bottom:0.5em;">
+  <h3>{{d.title}}</h3><br>
+    <h5>{{d.question}}</h5>
+    Solution:
+    <br>
+    <h6>{{d.answer}}</h6>
+    <button class="btn btn-success" (click) = "post(d)"><i class="fa-solid fa-check-double"></i> Approve </button>
+    <button class="btn btn-danger" (click) = "delete(d.id)" ><i class="fa-solid fa-xmark"></i> Delete</button>
+</div>
+</div> 
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

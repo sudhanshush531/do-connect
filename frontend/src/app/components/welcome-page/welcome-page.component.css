@@ -1,0 +1,60 @@
+/* GLOBAL STYLES */
+section {
+   /*background: rgb(128, 123, 123);*/
+    padding-top: 5em;
+    display: flex;
+    justify-content: center;
+  }
+  .typewriter h1 {
+    color: #fff;
+    font-family: monospace;
+    overflow: hidden;
+    border-right: .15em solid orange;
+    white-space: nowrap; 
+    margin: 0 auto; 
+    letter-spacing: .10em; 
+    animation: 
+      typing 2.5s steps(30, end),
+      blink-caret .5s step-end infinite;
+  }
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange }
+}
+h1{
+    font-size: 80px;
+}
+p{
+    color: white;
+    width: 80%;
+    top:-10px;
+    font-size:20px
+}
+@media only screen and (max-width: 600px) {
+  .typewriter{
+    width: 90%;
+   
+
+  }
+  h1{
+    font-size: 60px;
+    font-family:"lucida";
+  }
+}
+#button{
+  margin-top:15px;
+}
+#background{
+  background-image:
+  url('https://getwallpapers.com/wallpaper/full/3/d/c/13930.jpg');
+      background-size: cover;
+      
+  height: 100vh;
+width: 100%;
+padding: 0;
+margin: 0;
+}

@@ -1,0 +1,33 @@
+button{
+    border-radius: 40px;
+}
+.form-inline{
+    display: flex;
+    margin-right: 10px;
+}
+.form-control{
+    width: 500px;
+}
+@media only screen and (max-width: 600px) {
+    .form-control{
+        width: auto;
+    }
+  }
+
+nav{
+    position: fixed;
+    width: 100%;
+    top:0;
+    z-index: 1;
+   
+}
+
+.logo img{
+    height:4em;
+    width: 9em;
+    border-radius: 50px;
+    
+    }
+    #navbar{
+       color:green;
+    }
