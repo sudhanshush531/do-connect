@@ -2,7 +2,7 @@
 
 ## Overview
 
-The Code Doubt Clearing Platform is designed to provide a collaborative space for coders to seek answers to their programming questions. It offers a user-friendly interface that allows users to register, post questions, and receive answers from a community of fellow developers. To maintain quality and accuracy, the platform incorporates an approval system, ensuring that answers are reviewed and approved by an admin before being published.
+DoConnect is designed to provide a collaborative space for coders to seek answers to their programming questions. It offers a user-friendly interface that allows users to register, post questions, and receive answers from a community of fellow developers. To maintain quality and accuracy, the platform incorporates an approval system, ensuring that answers are reviewed and approved by an admin before being published.
 
 ## Features
 
