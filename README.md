@@ -1,4 +1,4 @@
-# Code Doubt Clearing Platform
+# Doubt Clearing Platform 
 
 ## Overview
 
