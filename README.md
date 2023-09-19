@@ -1,4 +1,4 @@
-# Doubt Clearing Platform 
+# DoConnect
 
 ## Overview
 
